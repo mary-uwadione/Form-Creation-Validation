@@ -1,5 +1,5 @@
 async function fetchUserData() {
-  const apiUrl = "https://jsonpla"
+  const apiUrl = "https://jsonplaceholder.typicode.com/users"
    const dataContainer = document.getElementById("api-data");
    
    try {
