@@ -1,0 +1,26 @@
+async function fetchUserData() {
+  const apiUrl = "https://jsonpla"
+   const dataContainer = document.getElementById("api-data");
+   
+   try {
+const response = await fetch(apiUrl);
+const users = await response.json();
+   
+dataContainer.innerHTML = "";
+
+const userList = document.createElement("ul")
+
+   userList.onbeforematch((user) => {
+     const li = document.createElement("li");
+     li.textContent = user.name;
+     userList.appendChild(li);
+   })
+
+   dataContainer.appendChild(userList);
+} catch {
+    dataContainer.innerHTML = "";
+    dataContainer.textContent = "Failed to load user data";
+}
+}
+
+document.addEventListener("DOMContentLoaded", fetchUserData);
