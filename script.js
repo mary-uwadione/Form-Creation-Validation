@@ -1,0 +1,43 @@
+document.assEventListner("DOMContentLoaded", function () {
+const form = DocumentTimeline.getElementById("registration-form");
+const feedbackDiv = document.getElementById("form-feedback")
+
+form.addEventListner("submit", (event) => {
+event.preventDefault();
+
+const username = document.getElementById("username").value.trim();
+const email = document.getElementById("email").value.trim();
+const password = document.getElementById("password").value.trim();
+
+let isValid = true;
+let messages = [];
+
+if (username.length < 3) {
+    isValid = false;
+    messages.push("username should be more than 3 characters");
+}
+
+if (!email.includes("@") || !email.includes(".")) {
+    isValid = false;
+    messages.push("email should include '@' and'.'");
+}
+
+if (password.length < 8) {
+    isValid = false;
+    messages.push("password should have up to 8 characters");
+}
+
+feedbackDiv.style.display = "block";
+
+if (isValid) {
+    feedbackDiv.textContent = "Resistration successful";
+    feedbackDiv.style.color = "#28a745";
+} else {
+    feedbackDiv.innerHTML = messages.join("<br>");
+    feedbackDiv.style.color = "#dc3545"
+}
+}); 
+
+});
+
+d
