@@ -30,7 +30,7 @@ if (password.length < 8) {
 feedbackDiv.style.display = "block";
 
 if (isValid) {
-    feedbackDiv.textContent = "Resistration successful";
+    feedbackDiv.textContent = "Registration successful";
     feedbackDiv.style.color = "#28a745";
 } else {
     feedbackDiv.innerHTML = messages.join("<br>");
