@@ -1,8 +1,8 @@
-document.addEventListner("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 const form = DocumentTimeline.getElementById("registration-form");
 const feedbackDiv = document.getElementById("form-feedback")
 
-form.addEventListner("submit", (event) => {
+form.addEventListener("submit", (event) => {
 event.preventDefault();
 
 const username = document.getElementById("username").value.trim();
@@ -40,4 +40,3 @@ if (isValid) {
 
 });
 
-d
